@@ -15,10 +15,6 @@ body {
   color: white;
   background: #333;
   font-family: 'Fira Sans', sans-serif;
-
-  /* background: #396afc;
-  background: -webkit-linear-gradient(to top, #2948ff, #396afc);
-  background: linear-gradient(to top, #2948ff, #396afc); */
 }
 
 h1 {
@@ -71,7 +67,7 @@ input[type='checkbox'] {
   height: 83px;
   width: 330px;
   margin: 8px;
-  /* opacity: 0.7; */
+  opacity: 0.7;
 }
 
 .result-container {
@@ -90,7 +86,6 @@ input[type='checkbox'] {
 
 .result-container #result {
   flex: 1;
-  /* border: 2px solid salmon; */
   color: black;
 }
 
