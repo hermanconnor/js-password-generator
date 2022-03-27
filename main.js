@@ -102,9 +102,31 @@ const getRandomString = (arr, rc = '') => {
 // GENERATE PASSWORD
 const generatePassword = () => {
   const checkBoxValues = getCheckboxValues();
+  if (checkBoxValues.length === 0) return;
+
   const pwd = getRandomString(checkBoxValues);
+
   result.innerText = pwd;
+};
+
+// Copy Password
+const copyPassword = () => {
+  const text = result.innerText;
+
+  if (!text) return;
+
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      result.innerText = 'Copied!';
+
+      setTimeout(() => {
+        result.innerText = text;
+      }, 2000);
+    })
+    .catch((err) => console.log(err));
 };
 
 // ADD EVENT LISTENERS
 generateBtn.addEventListener('click', generatePassword);
+copyBtn.addEventListener('click', copyPassword);
